@@ -1,6 +1,6 @@
 # Robot Framework Docker Action
 
-This action runs Robot Framework tests using [ppodgorsek](https://github.com/ppodgorsek/docker-robot-framework) image.
+This action runs Robot Framework tests using [qe360-automation/docker-robot-framework](https://github.com/qe360-automation/docker-robot-framework) image.
 
 ## Example usage
 
@@ -12,9 +12,9 @@ Run with chrome:
     name: Run Robot Framework Tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
+        uses: qe360-automation/robotframework-docker-action@v1.0
 ```
 
 Run with firefox and in parallel:
@@ -25,9 +25,9 @@ Run with firefox and in parallel:
     name: Run Robot Framework Tests
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Robot Framework
-        uses: joonvena/robotframework-docker-action@v1.0
+        uses: qe360-automation/robotframework-docker-action@v1.0
         with:
           browser: 'firefox'
           robot_threads: 2
