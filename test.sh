@@ -3,6 +3,9 @@ REPORTS_DIR=$(pwd)/$ROBOT_REPORTS_DIR
 TESTS_DIR=$(pwd)/$ROBOT_TESTS_DIR
 sudo mkdir $REPORTS_DIR && sudo chmod 777 $REPORTS_DIR
 
+# Authenticate to the GitHub container registry
+echo $GH_TOKEN | docker login ghcr.io -u qe360-test --password-stdin
+
 docker run --shm-size=$ALLOWED_SHARED_MEMORY \
   -e BROWSER=$BROWSER \
   -e ROBOT_THREADS=$ROBOT_THREADS \
