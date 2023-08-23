@@ -6,6 +6,9 @@ sudo mkdir $REPORTS_DIR && sudo chmod 777 $REPORTS_DIR
 # Authenticate to the GitHub container registry
 echo $GH_TOKEN | docker login ghcr.io -u qe360-test --password-stdin
 
+# Pull the Docker image
+docker pull $ROBOT_RUNNER_IMAGE
+
 docker run --shm-size=$ALLOWED_SHARED_MEMORY \
   -e BROWSER=$BROWSER \
   -e ROBOT_THREADS=$ROBOT_THREADS \
